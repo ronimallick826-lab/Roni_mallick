@@ -1,120 +1,212 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RM Jewellery Laser Shoulder - Review Us</title>
-    <!-- Google Fonts for premium typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        body {
-            background: linear-gradient(135deg, #74b9ff, #0984e3);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #333;
-            padding: 20px;
-        }
-        .container {
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            padding: 40px 30px;
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
-        }
-        .logo-placeholder {
-            font-size: 50px;
-            margin-bottom: 15px;
-        }
-        h1 {
-            font-size: 22px;
-            color: #2d3436;
-            margin-bottom: 2px;
-            font-weight: 700;
-        }
-        h2 {
-            font-size: 18px;
-            color: #0984e3;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        p.tagline {
-            font-size: 14px;
-            color: #636e72;
-            margin-bottom: 25px;
-        }
-        .stars {
-            font-size: 30px;
-            color: #fdcb6e;
-            margin-bottom: 25px;
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        .review-btn {
-            display: inline-block;
-            background: #ff7675;
-            color: white;
-            text-decoration: none;
-            padding: 15px 35px;
-            font-size: 18px;
-            font-weight: 600;
-            border-radius: 50px;
-            box-shadow: 0 5px 15px rgba(255, 118, 117, 0.4);
-            transition: all 0.3s ease;
-            width: 100%;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-        }
-        .review-btn:hover {
-            background: #d63031;
-            transform: scale(1.03);
-        }
-        .footer-text {
-            font-size: 13px;
-            color: #b2bec3;
-            border-top: 1px solid #dfe6e9;
-            padding-top: 15px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RM Jewellery Laser Shoulder - Review & Win</title>
+  <style>
+    body {
+      background: #0f172a; /* रॉयल डार्क बैकग्राउंड */
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border: 2px solid #e2e8f0;
+      border-image: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c) 1;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .logo-placeholder {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      color: #f59e0b;
+      font-size: 1.8rem;
+      margin: 10px 0 5px 0;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      color: #ffffff;
+      font-size: 1.4rem;
+      margin: 0 0 15px 0;
+    }
+
+    .tagline {
+      color: #94a3b8;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    /* व्हील/रोलर बॉक्स स्टाइल */
+    .wheel-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px dashed #bf953f;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+
+    .discount-display {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ffffff;
+      margin: 15px 0;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+    }
+
+    /* बटन स्टाइल्स */
+    .action-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #bf953f, #aa771c);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(187, 134, 252, 0.2);
+    }
+
+    .action-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+    }
+
+    .action-btn:disabled {
+      background: #475569;
+      color: #94a3b8;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* गुप्त कूपन और रिव्यू बटन (शुरुआत में छिपे रहेंगे) */
+    .coupon-box {
+      display: none;
+      margin-top: 15px;
+      font-size: 1.1rem;
+      color: #10b981; /* हरा रंग सफलता के लिए */
+      font-weight: bold;
+    }
+
+    .review-section {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .footer-text {
+      color: #64748b;
+      font-size: 0.9rem;
+      margin-top: 25px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- ज्वेलरी शॉप के लिए सुंदर चमकते सितारे और डायमंड इमोजी -->
-        <div class="logo-placeholder">✨💎✨</div> 
-        
-        <!-- आपकी दुकान का नाम -->
-        <h1>RM Jewellery Laser Shoulder</h1> 
-        <h2>आर एम लेझर सोल्डर</h2>
-        
-        <p class="tagline">हमारे साथ अपना अनुभव शेयर करें!</p>
-        
-        <!-- फाइव स्टार एनिमेशन -->
-        <div class="stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
+<div class="container">
+  <div class="logo-placeholder">✨💎✨</div>
+  <h1>RM Jewellery Laser Shoulder</h1>
+  <h2>आर एम लेझर सोल्डर</h2>
+  <p class="tagline">स्पेशल डिस्काउंट जीतें और अपना अनुभव शेयर करें!</p>
 
-        <!-- आपका डायरेक्ट गूगल रिव्यू लिंक यहाँ सेट कर दिया गया है -->
-        <a href="https://search.google.com/local/writereview?placeid=ChIJo9obcxRVxDsRTqpyCcBpAks" class="review-btn" target="_blank">
-            हमें Google पर Review दें
-        </a>
-
-        <div class="footer-text">
-            हमारी दुकान पर आने के लिए आपका बहुत-बहुत धन्यवाद! 🙏
-        </div>
+  <!-- डिस्काउंट गेम बॉक्स -->
+  <div class="wheel-box">
+    <div id="status-text" style="color: #cbd5e1;">अपना डिस्काउंट कूपन निकालने के लिए नीचे बटन दबाएं!</div>
+    <div class="discount-display" id="discount-slot">🎁</div>
+    
+    <button class="action-btn" id="spin-btn" onclick="startSpin()">भाग्य आजमाएं (Spin Now)</button>
+    
+    <div class="coupon-box" id="coupon-code">
+      कूपन कोड: <span style="color: #f59e0b;" id="code-text">RMJ10</span>
     </div>
+  </div>
+
+  <!-- Google Review सेक्शन (स्पिन के बाद दिखेगा) -->
+  <div class="review-section" id="review-section">
+    <p style="color: #ffffff; margin-bottom: 15px;">👉 इस डिस्काउंट को पक्का (Activate) करने के लिए नीचे बटन पर क्लिक करके हमें Google पर 5-Star Review दें!</p>
+    <a href="https://search.google.com/local/writereview?placeid=ChIJo9obcxRVxDsRTqpyCcBpAks" class="action-btn" target="_blank" style="background: linear-gradient(135deg, #10b981, #059669);">
+      यहाँ Review दें और डिस्काउंट पाएं
+    </a>
+  </div>
+
+  <div class="footer-text">
+    हमारी दुकान पर आने के लिए आपका बहुत-बहुत धन्यवाद! 🙏
+  </div>
+</div>
+
+<script>
+  function startSpin() {
+    const btn = document.getElementById('spin-btn');
+    const slot = document.getElementById('discount-slot');
+    const statusText = document.getElementById('status-text');
+    const reviewSec = document.getElementById('review-section');
+    const couponBox = document.getElementById('coupon-code');
+    const codeText = document.getElementById('code-text');
+
+    // बटन को डिसेबल करें ताकि कोई बार-बार न दबाए
+    btn.disabled = true;
+    btn.innerText = "रोल हो रहा है...";
+
+    // 10% से 30% के बीच के डिस्काउंट ऑप्शंस
+    const discountOptions = ["10%", "15%", "20%", "25%", "30%"];
+    let counter = 0;
+    
+    // रोलिंग एनीमेशन इफेक्ट
+    const interval = setInterval(() => {
+      slot.innerText = discountOptions[Math.floor(Math.random() * discountOptions.length)];
+    }, 100);
+
+    // 2 सेकंड बाद फाइनल डिस्काउंट रोकना
+    setTimeout(() => {
+      clearInterval(interval);
+      
+      // फाइनल डिस्काउंट रैंडम चुनना
+      const finalDiscount = discountOptions[Math.floor(Math.random() * discountOptions.length)];
+      slot.innerText = finalDiscount + " OFF!";
+      
+      // कूपन कोड बनाना (जैसे: RMJ15, RMJ30)
+      const numericValue = finalDiscount.replace('%', '');
+      codeText.innerText = "RMJ" + numericValue;
+      
+      statusText.innerText = "बधाई हो! आपने डिस्काउंट जीता है 🎉";
+      statusText.style.color = "#fbbf24";
+      
+      // कूपन कोड और रिव्यू बटन दिखाना
+      couponBox.style.display = "block";
+      reviewSec.style.display = "block";
+      
+      btn.innerText = "डिस्काउंट लॉक्ड! 🔒";
+    }, 2000);
+  }
+</script>
 
 </body>
 </html>
+
