@@ -13,18 +13,34 @@
       align-items: center;
       min-height: 100vh;
       margin: 0;
+      padding: 10px;
+      box-sizing: border-box;
     }
 
     .container {
       background: linear-gradient(145deg, #1e293b, #0f172a);
-      border: 2px solid #e2e8f0;
-      border-image: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c) 1;
+      position: relative;
       padding: 30px;
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       text-align: center;
       max-width: 400px;
-      width: 90%;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* बॉर्डर इमेज और रेडियस दोनों को एक साथ काम कराने के लिए */
+    .container::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: 16px; 
+      padding: 2px; 
+      background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); 
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude; 
+      pointer-events: none;
     }
 
     .logo-placeholder {
@@ -51,9 +67,8 @@
       margin-bottom: 20px;
     }
 
-    /* व्हील/रोलर बॉक्स स्टाइल */
     .wheel-box {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.03);
       border: 1px dashed #bf953f;
       padding: 20px;
       border-radius: 12px;
@@ -70,20 +85,23 @@
       justify-content: center;
       align-items: center;
       text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+      transition: filter 0.1s ease;
     }
 
-    /* बटन स्टाइल्स */
     .action-btn {
-      display: inline-block;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
       background: linear-gradient(135deg, #bf953f, #aa771c);
       color: #ffffff;
       text-decoration: none;
-      padding: 12px 28px;
-      font-size: 1.1rem;
+      padding: 12px 20px;
+      font-size: 1.05rem;
       font-weight: bold;
       border-radius: 50px;
       cursor: pointer;
       border: none;
+      margin: 10px auto;
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(187, 134, 252, 0.2);
     }
@@ -94,23 +112,24 @@
     }
 
     .action-btn:disabled {
-      background: #475569;
+      background: #475569 !important;
       color: #94a3b8;
       cursor: not-allowed;
       transform: none;
       box-shadow: none;
     }
 
-    /* गुप्त कूपन और रिव्यू बटन (शुरुआत में छिपे रहेंगे) */
     .coupon-box {
       display: none;
-      margin-top: 15px;
-      font-size: 1.1rem;
-      color: #10b981; /* हरा रंग सफलता के लिए */
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #10b981; 
       font-weight: bold;
+      animation: fadeIn 0.5s ease-in-out;
     }
 
-    .review-section {
+    /* दोनों बटनों का सेक्शन */
+    .action-section {
       display: none;
       margin-top: 20px;
       animation: fadeIn 0.5s ease-in-out;
@@ -134,9 +153,8 @@
   <div class="logo-placeholder">✨💎✨</div>
   <h1>RM Jewellery Laser Shoulder</h1>
   <h2>आर एम लेझर सोल्डर</h2>
-  <p class="tagline">स्पेशल डिस्काउंट जीतें और अपना अनुभव शेयर करें!</p>
+  <p class="tagline">स्पेशल डिस्काउंट जीतें और हमारा सपोर्ट करें!</p>
 
-  <!-- डिस्काउंट गेम बॉक्स -->
   <div class="wheel-box">
     <div id="status-text" style="color: #cbd5e1;">अपना डिस्काउंट कूपन निकालने के लिए नीचे बटन दबाएं!</div>
     <div class="discount-display" id="discount-slot">🎁</div>
@@ -148,11 +166,20 @@
     </div>
   </div>
 
-  <!-- Google Review सेक्शन (स्पिन के बाद दिखेगा) -->
-  <div class="review-section" id="review-section">
-    <p style="color: #ffffff; margin-bottom: 15px;">👉 इस डिस्काउंट को पक्का (Activate) करने के लिए नीचे बटन पर क्लिक करके हमें Google पर 5-Star Review दें!</p>
+  <!-- Google Review + Instagram दोनों का कंबाइंड सेक्शन -->
+  <div class="action-section" id="action-section">
+    <p style="color: #ffffff; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5;">
+      👉 इस डिस्काउंट को पक्का (Activate) करने के लिए हमें Google पर रिव्यू दें और Instagram पर फॉलो करें!
+    </p>
+    
+    <!-- 1. Google Review बटन -->
     <a href="https://search.google.com/local/writereview?placeid=ChIJo9obcxRVxDsRTqpyCcBpAks" class="action-btn" target="_blank" style="background: linear-gradient(135deg, #10b981, #059669);">
-      यहाँ Review दें और डिस्काउंट पाएं
+      ⭐ गूगल पर 5-Star Review दें
+    </a>
+
+    <!-- 2. Instagram बटन (आपकी आईडी r_leser_m के साथ अपडेटेड) -->
+    <a href="https://instagram.com/_u/r_leser_m" class="action-btn" target="_blank" style="background: linear-gradient(135deg, #e1306c, #c13584, #f77737);">
+      📸 इंस्टाग्राम पर फॉलो करें
     </a>
   </div>
 
@@ -166,41 +193,35 @@
     const btn = document.getElementById('spin-btn');
     const slot = document.getElementById('discount-slot');
     const statusText = document.getElementById('status-text');
-    const reviewSec = document.getElementById('review-section');
+    const actionSec = document.getElementById('action-section');
     const couponBox = document.getElementById('coupon-code');
     const codeText = document.getElementById('code-text');
 
-    // बटन को डिसेबल करें ताकि कोई बार-बार न दबाए
     btn.disabled = true;
     btn.innerText = "रोल हो रहा है...";
+    slot.style.filter = "blur(2px)"; 
 
-    // 10% से 30% के बीच के डिस्काउंट ऑप्शंस
     const discountOptions = ["10%", "15%", "20%", "25%", "30%"];
-    let counter = 0;
     
-    // रोलिंग एनीमेशन इफेक्ट
     const interval = setInterval(() => {
       slot.innerText = discountOptions[Math.floor(Math.random() * discountOptions.length)];
-    }, 100);
+    }, 80);
 
-    // 2 सेकंड बाद फाइनल डिस्काउंट रोकना
     setTimeout(() => {
       clearInterval(interval);
+      slot.style.filter = "none"; 
       
-      // फाइनल डिस्काउंट रैंडम चुनना
       const finalDiscount = discountOptions[Math.floor(Math.random() * discountOptions.length)];
       slot.innerText = finalDiscount + " OFF!";
       
-      // कूपन कोड बनाना (जैसे: RMJ15, RMJ30)
       const numericValue = finalDiscount.replace('%', '');
       codeText.innerText = "RMJ" + numericValue;
       
       statusText.innerText = "बधाई हो! आपने डिस्काउंट जीता है 🎉";
       statusText.style.color = "#fbbf24";
       
-      // कूपन कोड और रिव्यू बटन दिखाना
       couponBox.style.display = "block";
-      reviewSec.style.display = "block";
+      actionSec.style.display = "block"; 
       
       btn.innerText = "डिस्काउंट लॉक्ड! 🔒";
     }, 2000);
@@ -209,4 +230,5 @@
 
 </body>
 </html>
+
 
